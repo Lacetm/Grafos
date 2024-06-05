@@ -8,8 +8,8 @@ public class Grafo {
     private int qtdeMaximaVertices;
     private int qtdeAtualVertices;
     private List<Vertice> vertices;
-    private MatrizAdjacencia matrizAdjacencia;
-    private Map<String, Integer> rotuloEmIndice;
+    public MatrizAdjacencia matrizAdjacencia;
+    public Map<String, Integer> rotuloEmIndice;
 
     public Grafo(int qtde) throws IllegalArgumentException{
         if(qtde <= 0){
@@ -64,7 +64,7 @@ public class Grafo {
 
     }
 
-    private void criarMatrizAdjacencia() {
+    public void criarMatrizAdjacencia() {
         if(this.matrizAdjacencia == null) {
             this.matrizAdjacencia = new MatrizAdjacencia(new ArrayList<>(vertices));
         }
@@ -75,7 +75,7 @@ public class Grafo {
 
     }
 
-    private boolean isVerticeExiste(String rotulo) {
+    public boolean isVerticeExiste(String rotulo) {
         return rotuloEmIndice.get(rotulo) != null ? true : false;
     }
 }
